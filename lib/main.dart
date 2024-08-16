@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_flutter/utils/app_bindings.dart';
 import 'package:getx_flutter/view/home_page.dart';
 
 void main() {
@@ -16,7 +17,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialBinding: AppBindings(),
       home: const HomePage(),
+      getPages: [
+        GetPage(
+          name: '/',
+          page: () => const HomePage(),
+          //binding: AppBindings(),
+        ),
+      ],
     );
   }
 }

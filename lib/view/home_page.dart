@@ -9,6 +9,11 @@ class HomePage extends StatelessWidget {
   // final HomePageController controller = Get.put(HomePageController());
   //don't clear from memory
   // final HomePageController controller = Get.put(HomePageController(), permanent: true);
+  //lazy clear from memory
+  // final HomePageController controller = Get.lazyPut(() => HomePageController());
+  //lazy clear from memory
+  // final HomePageController controller = Get.lazyPut(() => HomePageController(),fenix: true);
+  //final HomePageController controller = Get.find<HomePageController>();
 
   @override
   Widget build(BuildContext context) {
