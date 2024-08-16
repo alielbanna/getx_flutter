@@ -11,6 +11,27 @@ class HomePageController extends GetxController {
     counter--;
     update();
   }
+
+  //like initialState
+  @override
+  void onInit() {
+    print("Init HomePageController");
+    super.onInit();
+  }
+
+  //after render - after build
+  @override
+  void onReady() {
+    print("Ready HomePageController");
+    super.onReady();
+  }
+
+  //like dispose
+  @override
+  void onClose() {
+    print("Close HomePageController");
+    super.onClose();
+  }
 }
 
 // class HomePageController extends GetxController {
