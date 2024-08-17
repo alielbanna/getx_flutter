@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_flutter/core/app_bindings.dart';
+import 'package:getx_flutter/core/locale/locale.dart';
+import 'package:getx_flutter/core/locale/locale_controller.dart';
 import 'package:getx_flutter/core/services/settings_services.dart';
 import 'package:getx_flutter/presentation/routes/middleware/auth_middleware.dart';
 import 'package:getx_flutter/presentation/routes/middleware/super_middleware.dart';
@@ -23,12 +25,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppLocaleController localeController = Get.put(AppLocaleController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       initialBinding: AppBindings(),
+      locale: localeController.initLocale,
+      translations: AppLocale(),
       // home: const HomePage(),
       initialRoute: '/',
       getPages: [
