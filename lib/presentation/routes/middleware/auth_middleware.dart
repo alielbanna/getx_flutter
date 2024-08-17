@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_flutter/main.dart';
+import 'package:getx_flutter/core/services/settings_services.dart';
 
 class AuthMiddleware extends GetMiddleware {
   @override
@@ -8,10 +8,10 @@ class AuthMiddleware extends GetMiddleware {
 
   @override
   RouteSettings? redirect(String? route) {
-    if (prefs!.getString('role') == 'user') {
+    if (SettingsServices().prefs.getString('role') == 'user') {
       return const RouteSettings(name: '/home');
     }
-    if (prefs!.getString('role') == 'admin') {
+    if (SettingsServices().prefs.getString('role') == 'admin') {
       return const RouteSettings(name: '/admin');
     }
     return null;
