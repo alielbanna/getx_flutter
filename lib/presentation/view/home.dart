@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:getx_flutter/view/page_one.dart';
+import 'package:getx_flutter/presentation/view/page_one.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
