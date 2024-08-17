@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_flutter/core/services/settings_services.dart';
 import 'package:getx_flutter/main.dart';
 
 class Login extends StatelessWidget {
@@ -22,7 +23,7 @@ class Login extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: InkWell(
                   onTap: () {
-                    prefs!.setString('role', 'user');
+                    SettingsServices().prefs.setString('role', 'user');
                     Get.offNamed('/home');
                   },
                   child: const Text(
@@ -41,7 +42,7 @@ class Login extends StatelessWidget {
                 padding: const EdgeInsets.all(10),
                 child: InkWell(
                   onTap: () {
-                    prefs!.setString('role', 'admin');
+                    SettingsServices().prefs.setString('role', 'admin');
                     Get.offNamed('/admin');
                   },
                   child: const Text(
