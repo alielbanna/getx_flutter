@@ -24,13 +24,21 @@ class AppDialog extends StatelessWidget {
                   //   title: 'Title',
                   // );
 
-                  Get.snackbar(
-                    'Title',
-                    'Message',
-                    backgroundColor: Colors.red,
+                  // Get.snackbar(
+                  //   'Title',
+                  //   'Message',
+                  //   backgroundColor: Colors.red,
+                  // );
+
+                  Get.bottomSheet(
+                    Container(
+                      color: Colors.red,
+                      height: 200,
+                    ),
                   );
                 },
-                child: const Text('Show SnackBar'),
+                child: const Text('Show BottomSheet'),
+                // const Text('Show SnackBar'),
                 // const Text('Show Dialog'),
               ),
             ),
