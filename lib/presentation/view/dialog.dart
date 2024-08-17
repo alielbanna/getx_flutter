@@ -20,11 +20,18 @@ class AppDialog extends StatelessWidget {
                 color: Colors.red,
                 textColor: Colors.white,
                 onPressed: () {
-                  Get.defaultDialog(
-                    title: 'Title',
+                  // Get.defaultDialog(
+                  //   title: 'Title',
+                  // );
+
+                  Get.snackbar(
+                    'Title',
+                    'Message',
+                    backgroundColor: Colors.red,
                   );
                 },
-                child: const Text('Show Dialog'),
+                child: const Text('Show SnackBar'),
+                // const Text('Show Dialog'),
               ),
             ),
           ],
