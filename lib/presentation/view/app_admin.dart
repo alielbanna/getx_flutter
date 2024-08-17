@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_flutter/core/services/settings_services.dart';
-import 'package:getx_flutter/main.dart';
 
 class AppAdmin extends StatelessWidget {
   const AppAdmin({super.key});
