@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_flutter/core/app_bindings.dart';
-import 'package:getx_flutter/domain/middleware/auth_middleware.dart';
-import 'package:getx_flutter/domain/middleware/super_middleware.dart';
+import 'package:getx_flutter/core/services/settings_services.dart';
+import 'package:getx_flutter/presentation/routes/middleware/auth_middleware.dart';
+import 'package:getx_flutter/presentation/routes/middleware/super_middleware.dart';
 import 'package:getx_flutter/presentation/view/app_admin.dart';
 import 'package:getx_flutter/presentation/view/app_home.dart';
 import 'package:getx_flutter/presentation/view/login.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-SharedPreferences? prefs;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  prefs = await SharedPreferences.getInstance();
+  await initialServices();
   runApp(const MyApp());
+}
+
+Future initialServices() async {
+  await Get.putAsync(() => SettingsServices().init());
 }
 
 class MyApp extends StatelessWidget {
